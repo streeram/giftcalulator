@@ -1,0 +1,29 @@
+﻿@model GiftCalculator.Models.GiftCostViewModel
+@{
+    ViewData["Title"] = "Gift calculator";
+}
+<form method="POST">
+    <h1 style="color:#ff6600">World Vision Australia Gift Calculator</h1>
+    <div>
+        <h3>Select gift type:</h3>
+        <select name="giftType">
+            @foreach (var gift in Model.Gifts)
+            {
+                <option value="@gift.Key">@gift.Key - @gift.Value</option>
+            }
+        </select>
+    </div>
+
+    <div style="margin-top:30px">
+        <img src="~/images/gifts/AGoat.jpg" />
+    </div>
+
+    <div>
+        <h3>Choose quantity:</h3>
+        <input type="number" value="1" name="quantity" style="width:50px" />
+    </div>
+
+    <div style="margin-top:30px">
+        <input type="submit" value="Calculate" />
+    </div>
+</form>
